@@ -4,4 +4,3 @@ print("Terve, " + käyttäjä + "!")
 
 
 
-
