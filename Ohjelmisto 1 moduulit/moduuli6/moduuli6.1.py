@@ -4,17 +4,15 @@ joka heittää noppaa niin kauan kunnes tulee kuutonen.
 Pääohjelma tulostaa kunkin heiton jälkeen saadun silmäluvun."""
 import random
 
-
 def noppa():
     noppaheitto = random.randint(1,6)
-    print(noppaheitto)
     return noppaheitto
 
-heitto = random.randint(1,6)
-
-while heitto != 6:
-    print(heitto)
+while True:
     heitto = noppa()
+    print(heitto)
+    if heitto == 6:
+        break
 
 
 
