@@ -8,23 +8,20 @@ Yksikköhintojen laskennassa on hyödynnettävä kirjoitettua funktiota."""
 
 import math
 
-pizza1halk = float(input("Anna 1. pizzan halkaisija: "))
-pizza1hint = float(input("Anna 1. pizzan hinta: "))
-pizza2halk = float(input("Anna 2. pizza halkaisija: "))
-pizza2hint = float(input("Anna 2. pizza hinta: "))
+pizza1halk = float(input("Anna 1. pizzan halkaisija senttimetreinä: "))
+pizza1hint = float(input("Anna 1. pizzan hinta euroina: "))
+pizza2halk = float(input("Anna 2. pizzan halkaisija senttimetreinä: "))
+pizza2hint = float(input("Anna 2. pizzan hinta euroina: "))
 
-def pizza (pizza1halk,pizza1hint,pizza2halk,pizza2hint):
-    pintaala = math.pi*(pizza1halk/2)**2
-    pintaala2 = math.pi*(pizza2halk/2)**2
-    suhde = pizza1hint/pintaala
-    suhde2 = pizza2hint/pintaala2
-    if suhde < suhde2:
-        print("Pizza 1 on parempi vastine rahalle")
-    elif suhde > suhde2:
-        print(f"Pizza 2 on parempi vastine rahalle")
-    return
+def pizza (pizzahalk,pizzahint):
+    pizzametreina = pizzahalk/100
+    pintaala = math.pi*(pizzametreina/2)**2
+    return pizzahint/pintaala
 
-pizza(pizza1halk,pizza1hint,pizza2halk,pizza2hint)
+if pizza(pizza1halk,pizza1hint) < pizza(pizza2halk,pizza2hint):
+    print("Pizza 1 on parempi vastine rahalle")
+else:
+     print(f"Pizza 2 on parempi vastine rahalle")
 
 
 
