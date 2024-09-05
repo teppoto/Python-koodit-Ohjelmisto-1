@@ -9,11 +9,10 @@ maxsilmaluku = int(input("Anna maksimisilmaluku: "))
 
 def noppa():
     noppaheitto = random.randint(1,21)
-    print(noppaheitto)
     return noppaheitto
 
-heitto = random.randint(1,21)
-
-while heitto != maxsilmaluku:
-    print(heitto)
+while True:
     heitto = noppa()
+    print(heitto)
+    if heitto == maxsilmaluku:
+        break
