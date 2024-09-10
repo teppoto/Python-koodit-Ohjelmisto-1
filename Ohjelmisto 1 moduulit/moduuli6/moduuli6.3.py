@@ -10,7 +10,7 @@ gallonamaara = float(input("Anna gallonamaara: "))
 
 def muunnos():
     litra = 3.875 * gallonamaara
-    print(f"{gallonamaara} on {litra} litraa")
+    print(f"{gallonamaara} gallonaa on {litra} litraa")
     return litra
 
 while gallonamaara >= 0:
