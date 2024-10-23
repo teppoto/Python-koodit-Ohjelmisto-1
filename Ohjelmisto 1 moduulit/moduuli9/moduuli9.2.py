@@ -13,8 +13,21 @@ class Auto:
         self.matka = matka
 
     def kiihdytä(self, muutos):
-        while muutos > 0:
-            nyknopeus = nyknopeus + muutos
+        self.nyknopeus += muutos
+        if self.nyknopeus > self.huippunopeus:
+            self.nyknopeus = self.huippunopeus
+        elif self.nyknopeus < 0:
+            self.nyknopeus = 0
+        print(f"Auton nopeus on nyt: {self.nyknopeus} km/h")
+
+
+auto = Auto("ABC-123", 142)
+auto.kiihdytä(30)
+auto.kiihdytä(70)
+auto.kiihdytä(50)
+auto.kiihdytä(-200)
+
+
 
 
 
