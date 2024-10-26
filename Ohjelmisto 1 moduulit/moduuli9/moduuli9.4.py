@@ -1,11 +1,11 @@
 import random
 
 class Auto:
-    def __init__(self, rek, huippunopeus, nyknopeus = 0, matka = 0,):
+    def __init__(self, rek, huippunopeus):
         self.rek = rek
         self.huippunopeus = huippunopeus
-        self.nyknopeus = nyknopeus
-        self.matka = matka
+        self.nyknopeus = 0
+        self.matka = 0
 
     def kiihdytä(self, muutos):
         self.nyknopeus += muutos
@@ -13,23 +13,27 @@ class Auto:
             self.nyknopeus = self.huippunopeus
         elif self.nyknopeus < 0:
             self.nyknopeus = 0
-        print(f"Auton nopeus on nyt: {self.nyknopeus} km/h")
 
-    def kulje(self,tunnit):
+    def kulje(self, tunnit):
         self.matka += tunnit * self.nyknopeus
-        print(f"Auton kuljettu matka on nyt: {self.matka} km")
 
 autolista = []
-
 for i in range(1, 11):
-    auto = Auto(f"ABC-{i}", 0)
+    huippunopeus = random.randint(100, 200)
+    auto = Auto(f"ABC-{i}", huippunopeus)
     autolista.append(auto)
 
-while matka <= 10000:
-    tunnit = 0
-    huippunopeus = random.randint(100, 200)
-    kiihdytä(random.randint(15, -10))
-    kulje(1)
+kilpailu_kaynnissa = True
+while kilpailu_kaynnissa:
+    for auto in autolista:
+        muutos = random.randint(-10, 15)
+        auto.kiihdytä(muutos)
+        auto.kulje(1)
+        if auto.matka >= 10000:
+            kilpailu_kaynnissa = False
+            break
 
-
-
+print(f"{'Rekisteri':<10} {'Huippunopeus (km/h)':<20} {'Nykyinen nopeus (km/h)':<25} {'Matka (km)':<15}")
+print("=" * 70)
+for auto in autolista:
+    print(f"{auto.rek:<10} {auto.huippunopeus:<20} {auto.nyknopeus:<25} {auto.matka:<15.2f}")
