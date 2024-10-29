@@ -1,6 +1,5 @@
 import random
 
-
 class Auto:
     def __init__(self, nimi, huippunopeus):
         self.nimi = nimi
