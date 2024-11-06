@@ -1,14 +1,12 @@
-noppa_maara = prompt("Anna noppien määrä: ")
+let noppa_maara = parseInt(prompt("Anna noppien määrä: "));
 
-noppaluvut = []
+let noppaluvut = [];
 
-noppa = Math.floor(Math.random() * noppa_maara);
+for (let i = 0; i < noppa_maara; i++) {
+    let noppa = Math.floor(Math.random() * 6) + 1;
+    noppaluvut.push(noppa);
+}
 
-append(noppaluvut)
+let sum = noppaluvut.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-for joku in noppa_maara
-math.random append(noppaluvut)
-sum noppaluvut
-
-
-
+document.querySelector('#target').innerHTML = sum
